@@ -15,9 +15,21 @@
 })();
 
 /* ===== HAMBURGER TOGGLE ===== */
+function closeMenu() {
+  var nav = document.getElementById('navLinks');
+  var ham = document.getElementById('hamburger');
+  if (!nav || !ham) return;
+  nav.classList.remove('open');
+  ham.classList.remove('open');
+  document.body.style.overflow = '';
+}
+
 function toggleMenu() {
-  document.getElementById('hamburger').classList.toggle('open');
-  document.getElementById('navLinks').classList.toggle('open');
+  var nav = document.getElementById('navLinks');
+  var ham = document.getElementById('hamburger');
+  var isOpen = nav.classList.toggle('open');
+  ham.classList.toggle('open', isOpen);
+  document.body.style.overflow = isOpen ? 'hidden' : '';
 }
 
 /* ===== WHATSAPP CHAT POPUP (10s delay) ===== */
@@ -84,8 +96,10 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
     const target = document.querySelector(a.getAttribute('href'));
     if (target) {
       e.preventDefault();
-      document.getElementById('navLinks').classList.remove('open');
-      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      closeMenu();
+      setTimeout(function() {
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }, 50);
     }
   });
 });
