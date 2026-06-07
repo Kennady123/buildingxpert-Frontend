@@ -120,7 +120,7 @@ document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbo
 
 /* ===== CONTACT FORM — BACKEND SUBMIT ===== */
 // ⚠️ After deploying to Render, replace this URL with your actual Render URL
-const BACKEND_URL = "https://buildinxpert.onrender.com/send-enquiry";
+const BACKEND_URL = "https://building-xpert-backend.vercel.app/send-enquiry";
 
 const form = document.getElementById('contactForm');
 const submitBtn = document.getElementById('submitBtn');
