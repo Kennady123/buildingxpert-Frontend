@@ -97,11 +97,9 @@ nav {
 .hero-slide.exit { opacity: 0; transform: scale(1.03); transition: opacity 0.8s ease-in-out, transform 0.8s ease; }
 
 /* Image paths now point to images/ subfolder */
-.slide-1 { background-image: url('../images/header1.jpeg'); }
-.slide-2 { background-image: url('../images/header2.jpg'); }
-.slide-3 { background-image: url('../images/header3.jpg'); }
-.slide-4 { background-image: url('../images/header4.avif'); }
-.slide-5 { background-image: url('../images/header5.jpg'); }
+.slide-1 { background-image: url('../images/header3.jpeg'); }
+.slide-2 { background-image: url('../images/header4.jpeg'); }
+.slide-3 { background-image: url('../images/header1.jpeg'); }
 
 .hero-overlay {
   position:absolute; inset:0; z-index:1;
@@ -116,7 +114,7 @@ nav {
 .slide-label.visible { opacity: 1; }
 
 .hero-content { position:relative; z-index:2; max-width:680px; }
-.hero-badge { display:inline-flex; align-items:center; gap:.6rem; background:rgba(232,101,10,.2); border:1.5px solid rgba(232,101,10,.6); padding:.4rem 1rem; border-radius:30px; font-size:.72rem; font-weight:800; letter-spacing:.14em; text-transform:uppercase; color:#ffd4a8; margin-bottom:1.6rem; animation:fadeUp .6s ease .1s both; }
+.hero-badge { display:inline-flex; align-items:center; gap:.6rem; background:rgba(232,101,10,.2); border:1.5px solid rgba(232,101,10,.6); padding:.4rem 1rem; border-radius:30px; font-size:.72rem; font-weight:800; letter-spacing:.14em; text-transform:uppercase; color:#ffd4a8; margin-bottom:1.6rem; animation:fadeUp .6s ease .1s both; animation-fill-mode:forwards; }
 .hero-badge::before { content:''; width:7px; height:7px; border-radius:50%; background:var(--orange-lt); flex-shrink:0; }
 .hero h1 { font-family:'Bebas Neue',sans-serif; font-size:clamp(3.4rem,8vw,6.8rem); line-height:.92; letter-spacing:.04em; color:#fff; margin-bottom:1.6rem; animation:fadeUp .7s ease .25s both; text-shadow: 0 2px 20px rgba(0,0,0,.4); }
 .hero h1 em { font-style:normal; color:var(--orange-lt); display:block; }
@@ -286,6 +284,8 @@ footer { background:var(--brown-dark); padding:4rem 6% 2rem; }
 .footer-social svg { width:18px; height:18px; fill:#fff; }
 
 @keyframes fadeUp { from { opacity:0; transform:translateY(30px); } to { opacity:1; transform:translateY(0); } }
+.hero-loaded .hero-badge,
+.hero-loaded .hero-btns { animation:none !important; opacity:1 !important; transform:none !important; }
 
 /* ===================== WHATSAPP CHAT POPUP ===================== */
 .wa-popup-wrap { position: fixed; bottom: 5rem; right: 1.2rem; z-index: 9998; width: 300px; opacity: 0; transform: translateY(16px) scale(.95); transition: opacity .35s ease, transform .35s ease; pointer-events: none; }
